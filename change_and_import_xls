@@ -1,0 +1,10 @@
+#! /bin/bash
+export  SPATIALITE_SECURITY=relaxed
+rm -f ./test.sqlite
+cp ./Generi_org.xlsx ./Generi.xlsx
+./change_first_row.py
+sqlite3 test.sqlite << __EOF
+.load mod_spatialite
+select ImportXLS('./Generi_org.xlsx', 'generi_org', 0, 1);
+select ImportXLS('./Generi.xlsx', 'generi', 0, 1);
+__EOF
