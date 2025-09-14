@@ -1,0 +1,1 @@
+Execute change_and_import_xls. The import from the originale Excel file is correct; importing from the modified Excel file result in only two columns table
